@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const configViewEngine = require('./config/viewEngine');
 const webRoutes = require('./routes/web');
+const mongoose = require('mongoose');
+const connection = require('./config/database');
 
 const app = express();
 const port = process.env.PORT || 8081;
@@ -13,6 +15,8 @@ configViewEngine(app);
 
 //Routes
 app.use('/',webRoutes);
+
+connection();
 
  
 app.listen(port,hostname, () => {
