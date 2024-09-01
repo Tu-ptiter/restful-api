@@ -1,5 +1,5 @@
 const express = require('express');
-const {getHomePage, getPage} = require('../Controllers/homController');
+const {getHomePage, getPage,postCreateUser} = require('../Controllers/homController');
 const router = express.Router();
 
 
@@ -7,5 +7,7 @@ const router = express.Router();
 router.get('/', getHomePage);
 
 router.get('/tdv', getPage);
+
+router.post('create-user', postCreateUser);
 
 module.exports=router; 
