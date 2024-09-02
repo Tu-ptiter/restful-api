@@ -9,17 +9,17 @@ const getPage = (req, res) =>{
 }
 
 const postCreateUser =  async (req, res) =>{
-        let email = req.body.email;
-        let name = req.body.name;
-        let city = req.body.city; 
+    let email = req.body.email;
+    let  name = req.body.myname;
+    let city = req.body.city;
 
-        await User.create({
-            email: email, 
-            name : name,
-            city: city  
-        });
+    await User.create({
+        email:email,
+        name: name,
+        city: city
+    })
 
-        res.render("Create success")
+    res.send("Create success")
 
 }
 

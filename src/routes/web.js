@@ -8,6 +8,6 @@ router.get('/', getHomePage);
 
 router.get('/tdv', getPage);
 
-router.post('create-user', postCreateUser);
+router.post('/create-user', postCreateUser);
 
 module.exports=router; 
