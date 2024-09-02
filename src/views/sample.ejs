@@ -2,9 +2,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 50px
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <h2>Hi I'm testing</h2>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/create" >Add a new user</a>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>email</th>
+                <th>name</th>
+                <th>city</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% results.forEach(result => { %>
+            <tr>
+                <td><%= result.id %></td>
+                <td><%= result.email %></td>
+                <td><%= result.name %></td>
+                <td><%= result.city %></td>
+            </tr>
+           <% }) %>
+        </tbody>
+    </table>
+    
 </body>
 </html>
