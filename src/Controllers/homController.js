@@ -26,11 +26,17 @@ const postCreateUser =  async (req, res) =>{
     res.send("Create success")
 
 }
-
+// update user
+const getUpdateUser = async(req, res) =>{
+    const userId = req.body.id;
+    let user  = await User.findById(userId).exec();
+    
+}
 
 module.exports ={
     getHomePage,
     getPage,
     postCreateUser,
-    createUser
+    createUser,
+    getUpdateUser
 }
