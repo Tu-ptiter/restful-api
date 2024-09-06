@@ -32,6 +32,7 @@
                 <th>email</th>
                 <th>name</th>
                 <th>city</th>
+                <th>actions</th>
             </tr>
         </thead>
         <tbody>
@@ -41,6 +42,10 @@
                 <td><%= result.email %></td>
                 <td><%= result.name %></td>
                 <td><%= result.city %></td>
+                <td>
+                    <a href="/update/<%= result.id %>">Edit</a>
+                    <button>Delete</button>
+                </td>
             </tr>
            <% }) %>
         </tbody>

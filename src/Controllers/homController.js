@@ -14,7 +14,7 @@ const createUser = (req,res) =>{
 }
 const postCreateUser =  async (req, res) =>{
     let email = req.body.email;
-    let  name = req.body.myname;
+    let  name = req.body.name;
     let city = req.body.city;
 
     await User.create({
@@ -27,16 +27,29 @@ const postCreateUser =  async (req, res) =>{
 
 }
 // update user
-const getUpdateUser = async(req, res) =>{
-    const userId = req.body.id;
+const getUpdateUser = async (req, res) =>{
+    const userId = req.params.id;
     let user  = await User.findById(userId).exec();
+    res.render('edit.ejs',{ user});
     
 }
+const postUpdateUser = async (req,res) =>{
+    let userId = req.params.id; 
+    let name = req.body.name;
+    let email = req.body.email;
+    let city = req.body.city;
 
+    await User.updateOne({_id: userId},{name: name, email:email, city:city});
+    
+    res.redirect("/");
+}
+
+       
 module.exports ={
     getHomePage,
     getPage,
     postCreateUser,
     createUser,
-    getUpdateUser
+    getUpdateUser,
+    postUpdateUser
 }

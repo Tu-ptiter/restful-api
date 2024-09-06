@@ -1,5 +1,5 @@
 const express = require('express');
-const {getHomePage, getPage,postCreateUser,createUser,getUpdateUser} = require('../Controllers/homController');
+const {getHomePage,postCreateUser,createUser,getUpdateUser,postUpdateUser} = require('../Controllers/homController');
 const router = express.Router();
 
 
@@ -11,6 +11,7 @@ router.get('/create',createUser)
 router.post('/create-user', postCreateUser);
 
 //update user
-router.get('update-user',getUpdateUser);
+router.get('/update/:id',getUpdateUser); 
+router.post('/update/:id',postUpdateUser)
 
 module.exports=router; 

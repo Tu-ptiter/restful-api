@@ -2,33 +2,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Update a User</title>
     <link rel="stylesheet" href="../public/css/style.css">
 </head>
 <body>
     <div class="topnav">
         <a class="active" href="/">Home</a>
-        <a href="/create" >Add a new user</a>
+        <a href="/create" >Update a user</a>
     </div>
 
     <div class="form">
-        <form action="/create-user" method="post">
-            <fieldset>
+        <form action="/update/<%= user._id %>" method="post">
+            <fieldset> 
                 <legend>hi</legend>
                 <div class="input-group">
                     <label for="email">email</label>
-                    <input type="text" name="email">
+                    <input type="text" name="email" value = "<%= user.email %>">
                 </div>
                 <div class="input-group">
                     <label for="name">name</label>
-                    <input type="text" name="name">
+                    <input type="text" name="name" value="<%= user.name %>">
                 </div>
                 <div class="input-group">
                     <label for="city">city</label>
-                    <input type="text" name="city">
+                    <input type="text" name="city" value="<%= user.city %>">
                 </div>
                 <div>
-                    <button>Create</button>
+                    <button>Save</button>
                 </div>
             </fieldset>
         </form>
