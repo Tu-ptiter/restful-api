@@ -29,6 +29,7 @@ const getUpdateUser = async (req, res) =>{
     res.render('edit.ejs',{ user});
     
 }
+
 const postUpdateUser = async (req,res) =>{
     let userId = req.params.id; 
     let name = req.body.name;
