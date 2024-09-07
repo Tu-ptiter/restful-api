@@ -1,5 +1,5 @@
 const express = require('express');
-const {getHomePage,postCreateUser,createUser,getUpdateUser,postUpdateUser} = require('../Controllers/homController');
+const {getHomePage,postCreateUser,createUser,getUpdateUser,postUpdateUser,deleteUser} = require('../Controllers/homController');
 const router = express.Router();
 
 
@@ -12,6 +12,9 @@ router.post('/create-user', postCreateUser);
 
 //update user
 router.get('/update/:id',getUpdateUser); 
-router.post('/update/:id',postUpdateUser)
+router.post('/update/:id',postUpdateUser);
+
+//delete User
+router.get('/delete/:id',deleteUser);
 
 module.exports=router; 

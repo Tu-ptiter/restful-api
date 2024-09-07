@@ -5,9 +5,6 @@ const getHomePage = async (req,res)=>{
     return res.render('sample.ejs', {results});
 }
 
-const getPage = (req, res) =>{
-    res.render('sample.ejs');
-}
 
 const createUser = (req,res) =>{
     res.render('home.ejs')
@@ -23,7 +20,7 @@ const postCreateUser =  async (req, res) =>{
         city: city
     })
 
-    res.send("Create success")
+    res.redirect('/');
 
 }
 // update user
@@ -41,15 +38,22 @@ const postUpdateUser = async (req,res) =>{
 
     await User.updateOne({_id: userId},{name: name, email:email, city:city});
     
+    res.redirect("/"); 
+}
+
+const deleteUser = async (req, res) =>{
+    let userId = req.params.id;
+    await User.deleteOne({_id: userId});
+
     res.redirect("/");
 }
 
        
 module.exports ={
     getHomePage,
-    getPage,
     postCreateUser,
     createUser,
     getUpdateUser,
-    postUpdateUser
+    postUpdateUser,
+    deleteUser
 }

@@ -16,7 +16,7 @@ configViewEngine(app);
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 //config req.body
-app.use(express.json())
+app.use(express.json()) 
 app.use(express.urlencoded({ extended: true}))
 
 //Routes
