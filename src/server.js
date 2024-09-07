@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const configViewEngine = require('./config/viewEngine');
 const webRoutes = require('./routes/web');
+const apiRoutes = require('./routes/api');
+
 const mongoose = require('mongoose');
 const connection = require('./config/database');
 const bodyParser = require('body-parser');
@@ -21,6 +23,8 @@ app.use(express.urlencoded({ extended: true}))
 
 //Routes
 app.use('/',webRoutes);
+app.use('/v1/api/',apiRoutes)
+
 
 // connect to db
 connection();

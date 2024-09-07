@@ -5,7 +5,6 @@ const getHomePage = async (req,res)=>{
     return res.render('sample.ejs', {results});
 }
 
-
 const createUser = (req,res) =>{
     res.render('home.ejs')
 }
